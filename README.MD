@@ -1,6 +1,6 @@
 # One Commerce Test – Shopify Integration (Laravel 12 + Nuxt 3)
 
-This solution demonstrates a senior-level Shopify integration with a modern full-stack setup. It covers data synchronization, webhook handling with verification, REST APIs for frontend consumption, and a styled Nuxt 3 frontend. The goal is to showcase clean architecture, best practices (SOLID, clean code, testing), and a pragmatic approach to real-world Shopify integrations.
+This solution demonstrates a Shopify integration with a modern full-stack setup. It covers data synchronization, webhook handling with verification, REST APIs for frontend consumption, and a styled Nuxt 3 frontend. The goal is to showcase clean architecture, best practices (SOLID, clean code, testing), and a pragmatic approach to real-world Shopify integrations.
 
 ## 🧩 Architecture & Design Decisions
 
@@ -40,7 +40,7 @@ This solution demonstrates a senior-level Shopify integration with a modern full
 *   **Idempotency:** Ensured for sync & webhook ingestion.
 *   **Resilience:** Handles pagination, rate-limiting (429 retry pattern sketched), and replay-safe webhooks.
 *   **Scalability:** Local DB ensures frontend can scale without hitting Shopify’s API rate limits. Architecture supports horizontal scaling with queues.
-*   **Modern Tooling:** Laravel 12, Nuxt 3, Pest, Playwright — all latest stable stacks.
+*   **Modern Tooling:** Laravel 12, Nuxt 3, Pest, Playwright all latest stable stacks.
 *   **Deployment readiness:** Designed with HTTPS/ngrok for local, Horizon/queues for production, and simple environment configuration.
 
 ## 🔄 Data Flow
