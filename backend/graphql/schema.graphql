@@ -1,0 +1,35 @@
+type ProductVariant {
+  id: ID!
+  shopify_id: String
+  sku: String
+  price: Float
+  compare_at_price: Float
+  option1: String
+  option2: String
+  option3: String
+}
+
+type ProductImage {
+  id: ID!
+  shopify_id: String
+  src: String
+  position: Int
+}
+
+type Product {
+  id: ID!
+  shopify_id: String
+  title: String
+  body_html: String
+  vendor: String
+  product_type: String
+  updated_at_shopify: DateTime
+  is_archived: Boolean
+  variants: [ProductVariant!]! @hasMany
+  images: [ProductImage!]! @hasMany
+}
+
+type Query {
+  products(search: String): [Product!]! @field(resolver: "App\\GraphQL\\Queries\\ProductQuery@list")
+  product(id: ID!): Product @field(resolver: "App\\GraphQL\\Queries\\ProductQuery@show")
+}
